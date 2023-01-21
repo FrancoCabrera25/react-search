@@ -1,20 +1,18 @@
 import { ThemeProvider } from '@emotion/react';
-import { createTheme, CssBaseline } from '@mui/material';
+import { Container, createTheme, CssBaseline } from '@mui/material';
 import { purpleTheme } from './purpleTheme';
 
 const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
+    palette: {
+        mode: 'dark',
+    },
 });
-
-
 
 export const AppTheme = ({ children }: any) => {
     return (
-        <ThemeProvider theme={darkTheme}>            
+        <ThemeProvider theme={purpleTheme}>
             <CssBaseline />
-            {children}
+            <Container>{children}</Container>
         </ThemeProvider>
     );
 };
