@@ -12,7 +12,10 @@ export const AppTheme = ({ children }: any) => {
     return (
         <ThemeProvider theme={purpleTheme}>
             <CssBaseline />
-            <Container>{children}</Container>
+            <Container>{
+            children
+            }
+            </Container>
         </ThemeProvider>
     );
 };

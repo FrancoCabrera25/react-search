@@ -12,11 +12,18 @@ export const Search = ({ onSearchEvent }: Props) => {
     const onChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
     };
+    
+    const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+        if (event.key === 'Enter') {
+            onSearchEvent(inputValue);
+        }
+    };
 
     return (
-        <Stack direction='row' sx={{ marginTop: 5, width: '90%' }}>
+        <Stack direction='row' sx={{ marginTop: 5, width: '100%' }}>
             <TextField
                 onChange={onChangeInputValue}
+                onKeyDown={onKeyDown}
                 value={inputValue}
                 sx={{ width: '100%' }}
                 size='small'
