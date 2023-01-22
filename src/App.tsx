@@ -1,10 +1,10 @@
-import { Box, Card, CircularProgress, Container } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import { Search } from './components/Search/Search.js';
 import { AppTheme } from './theme/AppTheme.js';
-import { UserCard } from './components/UserCard/UserCard.js';
 import { useUser } from './hooks/user/useUser.js';
 import { useUi } from './hooks/ui/useUi.js';
 import UserGitHub from './components/User/UserGitHub.js';
+import Loader from './components/loader/Loader.js';
 function App() {
     const { loading } = useUi();
     const { getUser } = useUser();
@@ -20,18 +20,7 @@ function App() {
                     padding: '25px',
                 }}>
                 <Search onSearchEvent={(value: string) => getUser(value)} />
-                {loading ? (
-                    <Box
-                        sx={{
-                            marginTop: '35px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                        }}>
-                        <CircularProgress color='secondary' />
-                    </Box>
-                ) : (
-                    <UserGitHub />
-                )}
+                {loading ? <Loader /> : <UserGitHub />}
             </Card>
         </AppTheme>
     );

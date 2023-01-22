@@ -1,9 +1,13 @@
-import { CircularProgress } from '@mui/material';
-import React from 'react';
-import { useUi } from '../../hooks/ui/useUi';
-
+import { Box, CircularProgress } from '@mui/material';
 export default function Loader() {
-    const { loading } = useUi();
-    console.log(loading);
-    return <CircularProgress color='secondary' />;
+    return (
+        <Box
+            sx={{
+                marginTop: '35px',
+                display: 'flex',
+                justifyContent: 'center',
+            }}>
+            <CircularProgress color='secondary' />
+        </Box>
+    );
 }

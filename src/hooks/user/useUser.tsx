@@ -35,14 +35,6 @@ export const useUser = () => {
         };
     };
 
-    // useEffect(() => {
-    //     setUser({} as IUser);
-    //     setLoading(true);
-    //     const time = setTimeout(() => {
-    //         getUser();
-    //     }, 2000);
-    // }, [userSearch]);
-
     return {
         user,
         userIsNotFound,
